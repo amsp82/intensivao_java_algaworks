@@ -1,3 +1,7 @@
+package com.adeterc.banco.app;
+
+import com.adeterc.banco.modelo.Conta;
+import com.adeterc.banco.modelo.Pessoa;
 
 public class Main {
 

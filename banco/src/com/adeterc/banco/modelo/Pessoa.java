@@ -1,3 +1,4 @@
+package com.adeterc.banco.modelo;
 
 public class Pessoa {
 
