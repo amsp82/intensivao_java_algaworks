@@ -1,7 +1,7 @@
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         Pessoa titular1 = new Pessoa();
         titular1.nome = "Adelmo Menezes";
         titular1.documento = "12332112311";
@@ -10,19 +10,24 @@ public class Main {
         titular2.nome = "Maria Abadia";
         titular2.documento = "12332112311";
 
-        Conta minhaConta = new Conta();
+        Conta minhaConta = new Conta(titular1, 123, 987);
         // minhaConta.nomeTitulo = "Adelmo Menezes";
-        minhaConta.titular = titular1;
-        minhaConta.agencia = 123;
-        minhaConta.numero = 987;
-        minhaConta.saldo = 10_000.00;
+        // minhaConta.titular = titular1;
+        // minhaConta.agencia = 123;
+        // minhaConta.numero = 987;
+        // minhaConta.saldo = 10_000.00;
+        minhaConta.depositar(15_000.00);
 
         Conta suaConta = new Conta();
         // suaConta.nomeTitulo = "Maria Abadia";
         suaConta.titular = titular2;
         suaConta.agencia = 222;
         suaConta.numero = 333;
-        suaConta.saldo = 30_000.00;
+        // suaConta.saldo = 30_000.00;
+        suaConta.depositar(30_000.00);
+
+        minhaConta.sacar(1_000.00);
+        minhaConta.sacar(1_000.00, 10.00);
 
         // System.out.println("Nome Titular: " + minhaConta.nomeTitulo);
         System.out.println("Nome Titular: " + minhaConta.titular.nome);
