@@ -3,10 +3,10 @@ import java.util.Objects;
 
 public class Conta {
 
-    Pessoa titular;
-    int agencia;
-    int numero;
-    double saldo; // variável de instância
+    private Pessoa titular;
+    private int agencia;
+    private int numero;
+    private double saldo; // variável de instância
 
     public Conta() {
     }
@@ -16,6 +16,22 @@ public class Conta {
         this.titular = titular;
         this.agencia = agencia;
         this.numero = numero;
+    }
+
+    public Pessoa getTitular() {
+        return titular;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 
     // metódo de instância

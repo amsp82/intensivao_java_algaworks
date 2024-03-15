@@ -3,38 +3,26 @@ public class Main {
 
     public static void main(String[] args) throws IllegalAccessException {
         Pessoa titular1 = new Pessoa();
-        titular1.nome = "Adelmo Menezes";
-        titular1.documento = "12332112311";
+        titular1.setNome("Adelmo Menezes");
+        titular1.setDocumento("12332112311");
 
         Pessoa titular2 = new Pessoa();
-        titular2.nome = "Maria Abadia";
-        titular2.documento = "12332112311";
+        titular2.setNome("Maria Abadia");
+        titular2.setDocumento("12332112311");
 
         Conta minhaConta = new Conta(titular1, 123, 987);
-        // minhaConta.nomeTitulo = "Adelmo Menezes";
-        // minhaConta.titular = titular1;
-        // minhaConta.agencia = 123;
-        // minhaConta.numero = 987;
-        // minhaConta.saldo = 10_000.00;
         minhaConta.depositar(15_000.00);
 
-        Conta suaConta = new Conta();
-        // suaConta.nomeTitulo = "Maria Abadia";
-        suaConta.titular = titular2;
-        suaConta.agencia = 222;
-        suaConta.numero = 333;
-        // suaConta.saldo = 30_000.00;
+        Conta suaConta = new Conta(titular2, 222, 333);
         suaConta.depositar(30_000.00);
 
         minhaConta.sacar(1_000.00);
         minhaConta.sacar(1_000.00, 10.00);
 
-        // System.out.println("Nome Titular: " + minhaConta.nomeTitulo);
-        System.out.println("Nome Titular: " + minhaConta.titular.nome);
-        System.out.println("Saldo: " + minhaConta.saldo);
+        System.out.println("Nome Titular: " + minhaConta.getTitular().getNome());
+        System.out.println("Saldo: " + minhaConta.getSaldo());
 
-        // System.out.println("Nome Titular: " + suaConta.nomeTitulo);
-        System.out.println("Nome Titular: " + suaConta.titular.nome);
-        System.out.println("Saldo: " + suaConta.saldo);
+        System.out.println("Nome Titular: " + suaConta.getTitular().getNome());
+        System.out.println("Saldo: " + suaConta.getSaldo());
     }
 }
