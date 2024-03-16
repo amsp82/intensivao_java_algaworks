@@ -1,8 +1,10 @@
 package com.adeterc.banco.modelo.pagamento;
 
+import java.math.BigDecimal;
+
 public interface DocumentoPagavel {
 
-    public abstract double getValorTotal();
+    public abstract BigDecimal getValorTotal();
 
     public abstract boolean estaPago();
 
