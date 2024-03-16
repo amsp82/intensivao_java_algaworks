@@ -1,15 +1,12 @@
 package com.adeterc.banco.modelo;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class ContaInvestimento extends Conta {
 
     public ContaInvestimento(Pessoa titular, int agencia, int numero) {
         super(titular, agencia, numero);
     }
 
-    public void creditarRendimentos(double percentualJuros) throws IllegalAccessException {
+    public void creditarRendimentos(double percentualJuros){
         double valorRendimentos = getSaldo() * percentualJuros / 100;
         depositar(valorRendimentos);
     }
@@ -17,11 +14,7 @@ public class ContaInvestimento extends Conta {
     @Override
     public void debitarTarifaMensal() {
         if (getSaldo() < 10_000) {
-            try {
                 sacar(30);
-            } catch (IllegalAccessException ex) {
-                Logger.getLogger(ContaInvestimento.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 }

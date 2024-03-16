@@ -27,10 +27,6 @@ public class ContaEspecial extends Conta {
 
     @Override
     public void debitarTarifaMensal() {
-        try {
-            sacar(20.00);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ContaEspecial.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        sacar(20.00);
     }
 }

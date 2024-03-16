@@ -40,28 +40,28 @@ public abstract class Conta {
     }
 
     // metódo de instância
-    public void depositar(double valor) throws IllegalAccessException {
+    public void depositar(double valor) {
         if (valor <= 0) {
-            throw new IllegalAccessException("Valor deve ser maior que 0");
+            throw new IllegalArgumentException("Valor deve ser maior que 0");
         }
         saldo = saldo + valor;
     }
 
-    public void sacar(double valor) throws IllegalAccessException {
+    public void sacar(double valor) {
         if (getSaldoDisponivel() - valor < 0) {
             throw new IllegalStateException("Saldo insuficiente");
         }
 
         if (valor <= 0) {
-            throw new IllegalAccessException("Valor deve ser maior que 0");
+            throw new IllegalArgumentException("Valor deve ser maior que 0");
         }
         saldo = saldo - valor;
     }
 
     // sobrecarga de método
-    public void sacar(double valor, double taxaSaque) throws IllegalAccessException {
+    public void sacar(double valor, double taxaSaque) {
         sacar(valor + taxaSaque);
     }
 
-    public abstract void debitarTarifaMensal(); 
+    public abstract void debitarTarifaMensal();
 }
