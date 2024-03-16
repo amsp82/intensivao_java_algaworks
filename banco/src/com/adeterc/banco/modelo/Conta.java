@@ -1,5 +1,6 @@
 package com.adeterc.banco.modelo;
 
+import com.adeterc.banco.modelo.excecao.SaldoInsuficienteException;
 import java.util.Objects;
 
 public abstract class Conta {
@@ -49,7 +50,7 @@ public abstract class Conta {
 
     public void sacar(double valor) {
         if (getSaldoDisponivel() - valor < 0) {
-            throw new IllegalStateException("Saldo insuficiente");
+            throw new SaldoInsuficienteException("Saldo insuficiente");
         }
 
         if (valor <= 0) {
