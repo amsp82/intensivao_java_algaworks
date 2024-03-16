@@ -35,6 +35,10 @@ public class Conta {
         return saldo;
     }
 
+    public double getSaldoDisponivel() {
+        return getSaldo();
+    }
+
     // metódo de instância
     public void depositar(double valor) throws IllegalAccessException {
         if (valor <= 0) {
@@ -44,7 +48,7 @@ public class Conta {
     }
 
     public void sacar(double valor) throws IllegalAccessException {
-        if (saldo - valor < 0) {
+        if (getSaldoDisponivel() - valor < 0) {
             throw new IllegalStateException("Saldo insuficiente");
         }
 
