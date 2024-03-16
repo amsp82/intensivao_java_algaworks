@@ -1,5 +1,8 @@
 package com.adeterc.banco.modelo;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ContaEspecial extends Conta {
 
     private double valorLimite;
@@ -13,7 +16,7 @@ public class ContaEspecial extends Conta {
     public double getSaldoDisponivel() {
         return getSaldo() + getValorLimite();
     }
-    
+
     public double getValorLimite() {
         return valorLimite;
     }
@@ -22,4 +25,12 @@ public class ContaEspecial extends Conta {
         this.valorLimite = valorLimite;
     }
 
+    @Override
+    public void debitarTarifaMensal() {
+        try {
+            sacar(20.00);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ContaEspecial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
