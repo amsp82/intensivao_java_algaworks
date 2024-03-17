@@ -1,4 +1,4 @@
-package com.adeterc.banco.modelo;
+package modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -85,4 +85,25 @@ public class Pessoa {
     public int hashCode() {
         return Objects.hash(documento);
     }
+
+    /*
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        return documento.equals(((Pessoa) obj).documento);
+    }
+
+    @Override
+    public int hashCode() {
+        return 1;
+    }
+     */
 }
