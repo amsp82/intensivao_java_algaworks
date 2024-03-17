@@ -14,15 +14,12 @@ public class Main {
         Pessoa titular1 = new Pessoa();
         titular1.setNome("Adelmo Menezes");
         titular1.setDocumento("12332112311");
-        // titular1.setRendimentoAnual(Double.valueOf(15_000.00d));
         titular1.setRendimentoAnual(new BigDecimal("15000")); // encaixotamento
         titular1.setTipo(TipoPessoa.JURIDICA);
-        // System.out.println(titular1.getTipo());
         titular1.setDataUltimaAtualizacao(LocalDateTime.parse("2024-03-15T14:20:00"));
         System.out.println(titular1.getDataUltimaAtualizacao());
-        
+
         // double rendimento = titular1.getRendimentoAnual(); // desencaixotamento
-        
         Pessoa titular2 = new Pessoa();
         titular2.setNome("Maria Abadia");
         titular2.setDocumento("12332112311");
